@@ -20,11 +20,14 @@
 
   <main>
     <div class="search">
-      <div class="search__input">
-        <label>Search for a city.</label>
-        <input type="text" placeholder="London, Paris etc." />
-        <input class="search__input__submit" type="submit" value="Search" />
-      </div>
+      <form class="search__input" onsubmit="handleSubmit(event)">
+        <label>Search for a city.
+          <input class="cityInput" type="text" placeholder="London, Paris etc." />
+        </label>
+        <button class="search__input__submit" type="submit">
+          Search
+        </button>
+      </form>
       <div class="search__history">
         <button>London</button>
         <button>Paris</button>
@@ -33,50 +36,16 @@
       </div>
     </div>
     <div class="results">
-      <div class="results__header">
-        <h2>London (14/9/2022)</h2>
-        <p>Temp: <br><span>13.63&deg;C</span></p>
-        <p>Wind: <br><span>1.7KPH</span></p>
-        <p>Humidity: <br><span>84%</span></p>
-      </div>
+
       <div class="results__forecast">
-        <h3>5-Day Forecast:</h3>
+        <h3 id="results__forecast__title">5-Day Forecast:</h3>
         <div class="results__forecast__cards">
-          <div class="results__forecast__cards__card">
-            <h4>15/9/2022</h4>
-            <p>Temp: <br><span>18.89&deg;C</span></p>
-            <p>Wind: <br><span>2.76KPH</span></p>
-            <p>Humidity: <br><span>44%</span></p>
-          </div>
-          <div class="results__forecast__cards__card">
-            <h4>15/9/2022</h4>
-            <p>Temp: <br><span>18.89&deg;C</span></p>
-            <p>Wind: <br><span>2.76KPH</span></p>
-            <p>Humidity: <br><span>44%</span></p>
-          </div>
-          <div class="results__forecast__cards__card">
-            <h4>15/9/2022</h4>
-            <p>Temp: <br><span>18.89&deg;C</span></p>
-            <p>Wind: <br><span>2.76KPH</span></p>
-            <p>Humidity: <br><span>44%</span></p>
-          </div>
-          <div class="results__forecast__cards__card">
-            <h4>15/9/2022</h4>
-            <p>Temp: <br><span>18.89&deg;C</span></p>
-            <p>Wind: <br><span>2.76KPH</span></p>
-            <p>Humidity: <br><span>44%</span></p>
-          </div>
-          <div class="results__forecast__cards__card">
-            <h4>15/9/2022</h4>
-            <p>Temp: <br><span>18.89&deg;C</span></p>
-            <p>Wind: <br><span>2.76KPH</span></p>
-            <p>Humidity: <br><span>44%</span></p>
-          </div>
+
         </div>
       </div>
     </div>
   </main>
-
+  <script src="assets/js/moment.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 
