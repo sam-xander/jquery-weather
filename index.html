@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__text text-center">Weather Dashboard</h1>
+  </header>
+
+  <main>
+    <div class="search">
+      <div class="search__input">
+        <label>Search for a city.</label>
+        <input type="text" placeholder="London, Paris etc." />
+        <input class="search__input__submit" type="submit" value="Search" />
+      </div>
+      <div class="search__history">
+        <button>London</button>
+        <button>Paris</button>
+        <button>Dubai</button>
+        <button>Birmingham</button>
+      </div>
+    </div>
+    <div class="results">
+      <div class="results__header">
+        <h2>London (14/9/2022)</h2>
+        <p>Temp: <br><span>13.63&deg;C</span></p>
+        <p>Wind: <br><span>1.7KPH</span></p>
+        <p>Humidity: <br><span>84%</span></p>
+      </div>
+      <div class="results__forecast">
+        <h3>5-Day Forecast:</h3>
+        <div class="results__forecast__cards">
+          <div class="results__forecast__cards__card">
+            <h4>15/9/2022</h4>
+            <p>Temp: <br><span>18.89&deg;C</span></p>
+            <p>Wind: <br><span>2.76KPH</span></p>
+            <p>Humidity: <br><span>44%</span></p>
+          </div>
+          <div class="results__forecast__cards__card">
+            <h4>15/9/2022</h4>
+            <p>Temp: <br><span>18.89&deg;C</span></p>
+            <p>Wind: <br><span>2.76KPH</span></p>
+            <p>Humidity: <br><span>44%</span></p>
+          </div>
+          <div class="results__forecast__cards__card">
+            <h4>15/9/2022</h4>
+            <p>Temp: <br><span>18.89&deg;C</span></p>
+            <p>Wind: <br><span>2.76KPH</span></p>
+            <p>Humidity: <br><span>44%</span></p>
+          </div>
+          <div class="results__forecast__cards__card">
+            <h4>15/9/2022</h4>
+            <p>Temp: <br><span>18.89&deg;C</span></p>
+            <p>Wind: <br><span>2.76KPH</span></p>
+            <p>Humidity: <br><span>44%</span></p>
+          </div>
+          <div class="results__forecast__cards__card">
+            <h4>15/9/2022</h4>
+            <p>Temp: <br><span>18.89&deg;C</span></p>
+            <p>Wind: <br><span>2.76KPH</span></p>
+            <p>Humidity: <br><span>44%</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
