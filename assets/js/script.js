@@ -21,7 +21,7 @@ function handleSubmit(event) {
   }
 
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -32,7 +32,7 @@ function handleSubmit(event) {
       form.reset();
 
       fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
       )
         .then((response) => response.json())
         .then((data) => {
