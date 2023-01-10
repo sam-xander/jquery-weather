@@ -136,6 +136,12 @@ main {
   margin: 20px 0;
 }
 
+#results__forecast__title {
+  opacity: 80%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
 .results__forecast__cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

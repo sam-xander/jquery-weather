@@ -2,12 +2,23 @@ const API_KEY = "fa3e87a610e30d0403d2c95118c35652";
 
 const forecastTitle = document.querySelector("#results__forecast__title");
 
-forecastTitle.innerText = "Enter a city to get the weather forecast";
+forecastTitle.innerText = "Enter a city to get the weather forecast.";
+
+let cities = JSON.parse(localStorage.getItem("cities"));
+
+if (!cities) {
+  cities = [];
+}
+
+generateSavedItems(cities);
 
 function handleSubmit(event) {
   event.preventDefault();
+  let city = document.querySelector(".cityInput").value;
 
-  const city = document.querySelector(".cityInput").value;
+  if (event.target.tagName === "BUTTON") {
+    city = event.target.textContent;
+  }
 
   fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`
@@ -17,6 +28,9 @@ function handleSubmit(event) {
       const lat = data[0].lat;
       const lon = data[0].lon;
 
+      const form = document.querySelector(".search__input");
+      form.reset();
+
       fetch(
         `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
       )
@@ -24,6 +38,17 @@ function handleSubmit(event) {
         .then((data) => {
           const city = data.city;
           const cityName = city.name;
+
+          cities.unshift(cityName);
+
+          if (cities.length > 5) {
+            cities.pop();
+          }
+
+          generateSavedItems(cities);
+
+          localStorage.setItem("cities", JSON.stringify(cities));
+
           const countryName = city.country;
 
           const resultsElement = document.querySelector(".results");
@@ -79,4 +104,18 @@ function handleSubmit(event) {
           }
         });
     });
+}
+
+function generateSavedItems(cities) {
+  const historyElement = document.querySelector(".search__history");
+  historyElement.innerHTML = "";
+
+  for (var city of cities) {
+    historyElement.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button onclick="handleSubmit(event)">${city}</button>
+    `
+    );
+  }
 }
