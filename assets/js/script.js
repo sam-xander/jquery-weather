@@ -66,6 +66,7 @@ function handleSubmit(event) {
             `
           <div class="results__header">
             <h2>${cityName}, ${countryName} (Latest)</h2>
+            <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png" width="100px" height="100px" />
             <p>Temp: <br><span>${currentWeather.main.temp}&deg;C</span></p>
             <p>Wind: <br><span>${currentWeather.wind.speed}KPH</span></p>
             <p>Humidity: <br><span>${currentWeather.main.humidity}%</span></p>
@@ -94,6 +95,7 @@ function handleSubmit(event) {
                 `
               <div class="results__forecast__cards__card">
                 <h4>${date}</h4>
+                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" width="50px" height="50px" />
                 <p>Temp: <br><span>${day.main.temp}&deg;C</span></p>
                 <p>Wind: <br><span>${day.wind.speed}KPH</span></p>
                 <p>Humidity: <br><span>${day.main.humidity}%</span></p>
